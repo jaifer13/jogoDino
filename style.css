@@ -1,0 +1,117 @@
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(to bottom, #87CEEB, #B0FFA7); /* Fundo gradiente */
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+#gameTitle {
+  font-size: 2rem;
+  color: #004d40;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#game {
+  position: relative;
+  width: 100%;
+  max-width: 400px; /* Limite a largura para centralizar no celular */
+  height: 70vh; /* Altura ajustada para retrato */
+  border: 2px solid #eb0923;
+  overflow: hidden;
+  background-color: #b0ffa7;
+  margin:0 auto;
+  border-radius: 10px;
+  box-sizing: border-box; /* Inclui a borda e padding no tamanho total da div */
+  padding: 5px; /* Adiciona espaçamento interno para que o conteúdo não fique encostado na borda */
+}
+
+@media (orientation: portrait) {
+  #game {
+    height: 75vh; /* Ajuste extra no modo retrato */
+  }
+}
+
+#dino, #obstacle {
+  position: absolute;
+  bottom: 0;
+}
+
+#dino {
+  width: 50px;
+  height: 50px;
+  background-image: url('images/dino-furioso.png');
+  background-size: cover;
+  left: 5%;
+}
+#obstacle {
+  width: 50px;
+  height: 30px;
+  background-image: url('images/bala.png'); /* Certifique-se de ter a imagem correta */
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 0;
+  right: 0; /* Começa fora da tela à direita */
+  animation: moveObstacle 1s linear infinite; /* Ajuste a duração para controlar a velocidade */
+}
+
+
+#score {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1.2rem;
+  color: #004d40;
+}
+
+/* Estilos dos botões */
+.control-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+  transition: background-color 0.3s;
+}
+
+.control-btn:hover {
+  background-color: #004d40;
+}
+
+/* Esconde os botões quando necessário */
+#jumpBtn, #restartBtn {
+  display: none;
+}
+
+/* Animação do obstáculo */
+@keyframes moveObstacle {
+  from {
+    right: -50px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+
+/* Animação do pulo */
+@keyframes jumpAnimation {
+  0% { bottom: 20px; }
+  50% { bottom: 120px; } /* Ajuste a altura do salto aqui */
+  100% { bottom: 20px; }
+}
+
+.jump {
+  animation: jumpAnimation 0.8s ease-out; /* Duração ajustada para o pulo */
+}
+
