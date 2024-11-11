@@ -1,12 +1,13 @@
 
 
+
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  margin: 0;
-  background: linear-gradient(to bottom, #87CEEB, #B0FFA7); /* Fundo gradiente */
+  margin: 10;
+  background: linear-gradient(to bottom, #87CEEB, #B0FFA7); 
   font-family: Arial, sans-serif;
   overflow: hidden;
 }
@@ -20,16 +21,19 @@ body {
 
 #game {
   position: relative;
-  width: 90vw;
-  max-width: 500px; /* Limite a largura para centralizar no celular */
-  height: 75vh; /* Altura ajustada para retrato */
+  width: 90vw; /* Ocupa 90% da largura da tela */
+  height: 75vh; /* Ocupa 75% da altura da tela */
+  max-width: 500px;
   border: 2px solid #eb0923;
-  overflow: hidden;
-  background-color: #b0ffa7;
-  margin:0 auto;
+/* background-color: #b0ffa7;*/
+  background-image: url('images/background.png');
   border-radius: 10px;
-  box-sizing: border-box; /* Inclui a borda e padding no tamanho total da div */
-  padding: 5px; /* Adiciona espaçamento interno para que o conteúdo não fique encostado na borda */
+  padding: 5px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 0 auto;
 }
 
 @media (orientation: portrait) {
@@ -51,15 +55,15 @@ body {
 #dino {
   width: 50px;
   height: 50px;
-  background-image: url('images/dino-furioso.png');
+  background-image: url('images/dino2.png');
   background-size: cover;
   left: 5%;
 }
 #obstacle {
   width: 50px;
-  height: 30px;
-  background-image: url('images/bala.png'); /* Certifique-se de ter a imagem correta */
-  background-size: cover;
+  height: 50px;
+  background-image: url('images/bala2.png'); /* Certifique-se de ter a imagem correta */
+  background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
   bottom: 0;
@@ -73,7 +77,7 @@ body {
   top: 10px;
   left: 10px;
   font-size: 1.2rem;
-  color: #004d40;
+  color:red;
 }
 
 /* Estilos dos botões */
@@ -119,4 +123,6 @@ body {
 .jump {
   animation: jumpAnimation 0.8s ease-out; /* Duração ajustada para o pulo */
 }
+
+
 
