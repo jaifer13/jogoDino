@@ -20,9 +20,9 @@ body {
 
 #game {
   position: relative;
-  width: 100%;
-  max-width: 400px; /* Limite a largura para centralizar no celular */
-  height: 70vh; /* Altura ajustada para retrato */
+  width: 90vw;
+  max-width: 500px; /* Limite a largura para centralizar no celular */
+  height: 75vh; /* Altura ajustada para retrato */
   border: 2px solid #eb0923;
   overflow: hidden;
   background-color: #b0ffa7;
@@ -34,7 +34,12 @@ body {
 
 @media (orientation: portrait) {
   #game {
-    height: 75vh; /* Ajuste extra no modo retrato */
+    height: 85vh; /* Ajuste extra no modo retrato */
+  }
+}
+@media (orientation: landscape) {
+  #game {
+    height: 60vh; /* Reduz um pouco a altura no modo paisagem */
   }
 }
 
